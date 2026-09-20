@@ -12,8 +12,8 @@ void PrintUsage()
 int main(int argc, char** argv)
 {
 #if _DEBUG
-    std::string logPath = "D:\\repos\\nhl94e\\Decompress2\\Tests\\asw0.log";
-    std::string outputPath = "D:\\repos\\nhl94e\\Decompress2\\Tests\\asw0.noirq.log";
+    std::string logPath = "D:\\repos\\logtools\\stripirq\\JP.txt";
+    std::string outputPath = "D:\\repos\\logtools\\stripirq\\JP.noirq.txt";
 #else
     if (argc != 3)
     {

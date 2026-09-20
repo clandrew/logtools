@@ -8,13 +8,15 @@
 
 int main(int argc, wchar_t** argv)
 {
-    std::wifstream f1(L"D:\\repos\\fnxide\\bin\\Debug\\log.orig.txt");
-    std::wifstream f2(L"D:\\repos\\fnxide\\bin\\Debug\\log.fixed.txt");
+    std::wifstream f1(L"D:\\repos\\logtools\\DumbAndCheapDiff\\JP.noirq.txt");
+    std::wifstream f2(L"D:\\repos\\logtools\\DumbAndCheapDiff\\EN.noirq.txt");
 
-    int startindex = 145250 + 500;
+    int startindex = 0;
 
     int lineindex = 0;
     bool differenceFound = false;
+    bool lFound = false;
+    bool rFound = false;
     while (f1.good() && f2.good())
     {
         lineindex++;
@@ -26,19 +28,22 @@ int main(int argc, wchar_t** argv)
 
         if (lineindex > startindex)
         {
-            if (s1 != s2)
+            if (s1.find(L"$C0/1064") != -1)
             {
-                std::wcout << L"Difference found at line " << lineindex << L".\n";
-                std::wcout << L"File 1: " << s1 << L"\n";
-                std::wcout << L"File 2: " << s2 << L"\n";
-                differenceFound = true;
+                std::wcout << L"Found search string in file JP.noirq.txt at " << lineindex << L".\n";
+                lFound = true;
+            }
+            if (s2.find(L"$C0/1064") != -1)
+            {
+                std::wcout << L"Found search string in file EN.noirq.txt at " << lineindex << L".\n";
+                rFound = true;
+            }
+
+            if (lFound && rFound)
+            {
+                std::wcout << L"Exiting.\n";
                 break;
             }
         }
-    }
-
-    if (!differenceFound)
-    {
-        std::wcout << L"No differences found in " << lineindex << L" lines.\n";
     }
 }
