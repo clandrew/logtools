@@ -12,3 +12,6 @@
 /FindSingleDivergentBranch/Release/
 /stripirq/x64/
 /stripirq/.vs/
+/FindCodeExecutedOnce/Debug/
+/FindCodeExecutedOnce/Release/
+/FindCodeExecutedOnce/.vs/
