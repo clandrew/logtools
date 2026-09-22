@@ -7,5 +7,6 @@ Contents:
 * **DumbAndCheapDiff** - Operates on any pair of text files. Unlike many programs, won't choke on files that are 100k+ lines long.
 * **TruncateTextFile** - Operates on any one, or pair of text files to a given start and end line numbers. Unlike many programs, won't choke on files that are 100k+ lines long.
 * **FindDivergentPC** - Operates on Foenix 65816 logs. Reports any program counter values which are in one log and not the other, or vice versa.
+* **FindCodeExecutedOnce** - Operates on SNES 65816 logs. Reports instances where a given program counter is executed once.
 
 Tools are for personal use, so in a lot of cases the arguments are compiled-in instead of passed by command line.
